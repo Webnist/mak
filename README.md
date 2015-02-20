@@ -3,24 +3,25 @@
 とりあえず途中遊び程度。
 途中なので説明が中途半端なので適当に感じて下さい。
 
-archive.html
-author.html
-page.html
-single.html
+- archive.html
+- author.html
+- page.html
+- single.html
 
-タグ
-ID : {{mak_post_id()}}
-Permalink : {{mak_permalink()}}
-Title : {{mak_title()}}
-Author ID : {{mak_author_id()}}
-Author Avatar : {{mak_author_avatar()}}
-Author Description : {{mak_author_description()}}
-Author Name : {{mak_author_name()}}
-Post Date : {{mak_post_date()}}
-デフォルトは yyyy/MM/dd
-変更する場合は {{mak_post_date()|data:'yyyy年MM月dd日'}}
-Thumbnail View : {{mak_thumbnail().view}}
-has_thumbnail みたいなの
+## タグ
+- ID : {{mak_post_id()}}
+- Permalink : {{mak_permalink()}}
+- Title : {{mak_title()}}
+- Author ID : {{mak_author_id()}}
+- Author Avatar : {{mak_author_avatar()}}
+- Author Description : {{mak_author_description()}}
+- Author Name : {{mak_author_name()}}
+- Post Date : {{mak_post_date()}}
+ - デフォルトは yyyy/MM/dd
+ - 変更する場合は {{mak_post_date()|data:'yyyy年MM月dd日'}}
+- Thumbnail View : {{mak_thumbnail().view}}
+ - has_thumbnail みたいなの
+
 例:
 
 ```html:archive.html
@@ -31,15 +32,16 @@ has_thumbnail みたいなの
 	</p>
 ```
 
-Thumbnail ID : {{mak_thumbnail().id}}
-Thumbnail Height : {{mak_thumbnail().height}}
-Thumbnail URL : {{mak_thumbnail().url}}
-Thumbnail Width : {{mak_thumbnail().width}}
-Thumbnail Title : {{mak_thumbnail().title}}
-※サイズを変更する場合は
-各 mak_thumbnail() を mak_thumbnail('large') 等にする。
+- Thumbnail ID : {{mak_thumbnail().id}}
+- Thumbnail Height : {{mak_thumbnail().height}}
+- Thumbnail URL : {{mak_thumbnail().url}}
+- Thumbnail Width : {{mak_thumbnail().width}}
+- Thumbnail Title : {{mak_thumbnail().title}}
+
+※サイズを変更する場合は各 mak_thumbnail() を mak_thumbnail('large') 等にする。
 
 カテゴリー
+
 ```html:archive.html
 <p class="category" ng-if="!!mak_terms()" ng-repeat="term in mak_terms()">
 Term Name:{{term.name}}<br>
